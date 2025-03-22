@@ -29,7 +29,7 @@ SECRET_KEY =\
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost',
-                 'https://hugorodrigue-8000.theiadockernext-1-labs-prod' 
+                 'https://hugorodrigue-8000.theiadockernext-1-labs-prod'
                  '-theiak8s-4-tor01.proxy.cognitiveclass.ai']
 CSRF_TRUSTED_ORIGINS = ['https://hugorodrigue-8000.theiadockernext-1-labs'
                         '-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
@@ -97,7 +97,7 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME':
-        'django.contrib.auth.password_validation.' 
+        'django.contrib.auth.password_validation.'
         'UserAttributeSimilarityValidator',
     },
     {
