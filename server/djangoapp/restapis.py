@@ -55,7 +55,7 @@ def searchcars_request(endpoint, **kwargs):
             params = params + key + "=" + value + "&"
     
     request_url= searchcars_url+endpoint+"?"+params
-    prin("GET from {}".format(request_url))
+    print("GET from {}".format(request_url))
     try:
         response = requests.get(request_url)
         return response.json()

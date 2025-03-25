@@ -159,9 +159,10 @@ def get_inventory(request, dealer_id):
             case {'price': price}:
                 endpoint = f"/carsbyprice/{dealer_id}/{price}"
             case _:
-                endpoint = f"/cars/{dealer_id}"
+                endpoint = "/cars/"+str(dealer_id)
 
         cars = searchcars_request(endpoint)
+        print(cars)
         return JsonResponse({"status": 200, "cars": cars})
     else:
         return JsonResponse({"status": 400, "message": "Bad Request"})
