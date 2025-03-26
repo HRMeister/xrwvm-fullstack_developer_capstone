@@ -15,8 +15,8 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from .populate import initiate
 from .models import CarMake, CarModel
-from .restapis import get_request, analyze_review_sentiments, post_review, searchcars_request
-
+from .restapis import get_request, analyze_review_sentiments
+from .restapis import post_review, searchcars_request
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -143,6 +143,7 @@ def get_cars(request):
         cars.append({"CarModel": car_model.name,
                      "CarMake": car_model.car_make.name})
     return JsonResponse({"CarModels": cars})
+
 
 def get_inventory(request, dealer_id):
     data = request.GET
