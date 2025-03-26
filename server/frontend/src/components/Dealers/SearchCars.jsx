@@ -32,7 +32,7 @@ const SearchCars = () => {
             tmpmodels.push(car.model)
         })
         setMakes(Array.from(new Set(tmpmakes)));
-        setModels(Array.from(new Set(tmpmodels)))
+        setModels(Array.from(new Set(tmpmodels)));
     }
 
     const fetchCars = async ()=>{
@@ -41,7 +41,7 @@ const SearchCars = () => {
         });
         const retobj = await res.json();
 
-        if(retobj === 200){
+        if(retobj.status === 200){
             let cars = Array.from(retobj.cars)
             setCars(cars);
             populateMakesAndModels(cars);
@@ -161,7 +161,7 @@ const SearchCars = () => {
                 'Content-Type': 'application/json',
             }})
         const retobj = await res.json();
-        if(retobj === 200){
+        if(retobj.status === 200){
             setCarsmatchingCriteria(retobj.cars);
         }
     }
@@ -177,7 +177,7 @@ const SearchCars = () => {
                 'Content-Type': 'application/json',
             }})
         const retobj = await res.json();
-        if(retobj === 200){
+        if(retobj.status === 200){
             setCarsmatchingCriteria(retobj.cars);
         }
     }
@@ -193,7 +193,7 @@ const SearchCars = () => {
                 'Content-Type': 'application/json',
             }})
         const retobj = await res.json();
-        if(retobj === 200){
+        if(retobj.status === 200){
             setCarsmatchingCriteria(retobj.cars);
         }
     }
